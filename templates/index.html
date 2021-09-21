@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block body %}
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/home-bg.jpg') }}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>{{ params["blog_name"] }}</h1>
+              <span class="subheading">A Blog Theme by Start Bootstrap</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+            <!-- fetching data from database and putting in for loop -->
+
+          {% for i in posts %}
+          <!-- <li><a href="">{{i.title}} </a></li> -->
+          <div class="post-preview">
+            <a href="/post/{{i.slug}}">
+              <h2 class="post-title">
+                <!-- Man must explore, and this is exploration at its greatest -->
+                {{i.title}}
+              </h2>
+           
+            </a>
+         
+            <h3 class="post-meta">
+              {{i.tagline}}
+            </h3>
+            <p class="content">
+              {{i.content[0:20]}}.....
+            </p>
+            <p class="post-meta">Posted by
+              <a href="#">Admin</a>
+              on {{i.date}}</p>
+          </div>
+          <hr>
+          {%endfor%}
+
+        
+          <!-- Pager -->
+          <div class="clearfix">
+            <a class="btn btn-primary float-right" href="{{prev}}">-Previous </a>
+
+            <a class="btn btn-primary float-left next" href="{{next}}">Next →</a>
+
+          </div>
+          <div class="clearfix">
+            
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
