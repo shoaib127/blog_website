@@ -1,0 +1,15 @@
+{
+    "params":{
+        "local_Server":"True",
+        "local_uri": "mysql://root:@localhost/blog_flask",
+        "prod_uri": "mysql://root:@localhost/blog_flask",
+        "fb_url":"facebook.com/blog",
+        "blog_name":"Shoaib blog",
+        "gmail_username":"shoaibkhan6993@gmail.com",
+        "gmail_password":"shoaibabduljabbar2612",
+        "adminusername":"admin",
+        "adminpassword":"admin",
+        "session_key":"key",
+        "upload_location":"D:\\New folder"
+    }
+}
